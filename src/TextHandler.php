@@ -3,7 +3,7 @@
 /**
  * @author Gadel Raymanov <raymanovg@gmail.com>
  */
-class Reverter
+class TextHandler
 {
     public function revertPunctuationMarks(string $text) : string
     {
@@ -22,7 +22,7 @@ class Reverter
         return $text;
     }
 
-    protected function getCharPositions(string $text, array $chars) : array
+    public function getCharPositions(string $text, array $chars) : array
     {
         $positions = [];
         for ($i = 0; $i < strlen($text); $i++) {
@@ -34,7 +34,7 @@ class Reverter
         return $positions;
     }
 
-    protected function getPunctuationMarks(string $text) : array
+    public function getPunctuationMarks(string $text) : array
     {
         static $pattern = '/[^\w\s\d]/u';
 
