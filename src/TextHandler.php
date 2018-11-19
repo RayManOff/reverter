@@ -22,7 +22,7 @@ class TextHandler
         return $text;
     }
 
-    public function getCharPositions(string $text, array $chars) : array
+    protected function getCharPositions(string $text, array $chars) : array
     {
         $positions = [];
         for ($i = 0; $i < strlen($text); $i++) {
@@ -34,7 +34,7 @@ class TextHandler
         return $positions;
     }
 
-    public function getPunctuationMarks(string $text) : array
+    protected function getPunctuationMarks(string $text) : array
     {
         static $pattern = '/[^\w\s\d]/u';
 
